@@ -1,0 +1,51 @@
+.responsive-svg-container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    max-width: 1200px;
+}
+/* Exercise 5.2 - Line Chart */
+
+#line-chart {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+#line-chart svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#line-chart .price-point:hover {
+    fill: darkgreen;
+    r: 5;
+}
+
+#line-chart .tick text {
+    font-size: 13px;
+}
+
+/* Exercise 5.3 - Donut Chart */
+
+#donut-chart {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+#donut-chart svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#donut-chart .donut-slice path:hover {
+    opacity: 0.85;
+}
+
+#donut-chart .donut-slice text {
+    font-family: Arial, sans-serif;
+    pointer-events: none;
+}

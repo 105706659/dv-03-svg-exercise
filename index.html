@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercise 4.1 - Draw SVGs</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 760px; margin: 24px auto; padding: 0 16px; color: #222; }
+    svg { border: 1px solid #999; max-width: 100%; height: auto; }
+    img { max-width: 100%; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <h1>Exercise 4.1: Draw SVGs</h1>
+  
+  <div class="responsive-svg-container"></div>
+
+  <h2>Step 1: House and garden</h2>
+
+  <svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- RECT: sky and grass -->
+    <rect x="0" y="0" width="400" height="400" fill="#87CEEB" />
+    <rect x="0" y="260" width="400" height="140" fill="green" />
+
+    <!-- CIRCLE: sun -->
+    <circle cx="330" cy="60" r="30" fill="yellow" />
+
+    <!-- ELLIPSE: cloud -->
+    <ellipse cx="90" cy="60" rx="45" ry="18" fill="white" />
+    <ellipse cx="115" cy="50" rx="30" ry="14" fill="white" />
+
+    <!-- RECT: chimney (drawn before the roof so the roof overlaps it) -->
+    <rect x="270" y="100" width="20" height="50" fill="#6b2f0f" />
+
+    <!-- POLYLINE: smoke from the chimney (open shape, so fill="none") -->
+    <polyline points="280,95 290,80 275,65 288,50"
+              fill="none" stroke="gray" stroke-width="3" />
+
+    <!-- RECT: house body -->
+    <rect x="150" y="170" width="150" height="120" fill="#8B4513" />
+
+    <!-- POLYGON: roof (closed shape with 3 points) -->
+    <polygon points="135,170 225,95 315,170" fill="peru" />
+
+    <!-- G: two windows grouped, shared style, positioned with translate -->
+    <g id="windows" transform="translate(165, 190)"
+       fill="lightblue" stroke="#333" stroke-width="2">
+      <rect x="0"  y="0" width="35" height="35" />
+      <rect x="85" y="0" width="35" height="35" />
+    </g>
+
+    <!-- RECT + CIRCLE: door and door knob -->
+    <rect x="210" y="225" width="30" height="65" fill="sienna" />
+    <circle cx="233" cy="260" r="3" fill="black" />
+
+    <!-- RECT + ELLIPSE: tree trunk and leaves -->
+    <rect x="60" y="200" width="14" height="90" fill="#8B5A2B" />
+    <ellipse cx="67" cy="190" rx="38" ry="32" fill="forestgreen" />
+
+    <!-- PATH: curved garden path (M = move, C = cubic curve, S = smooth curve) -->
+    <path d="M 225 290 C 225 320, 150 320, 170 350 S 200 385, 190 400"
+          fill="none" stroke="orange" stroke-width="6" />
+
+    <!-- LINE: fence on the right side of the garden -->
+    <line x1="320" y1="300" x2="395" y2="300" stroke="white" stroke-width="3" />
+    <line x1="330" y1="280" x2="330" y2="320" stroke="white" stroke-width="4" />
+    <line x1="355" y1="280" x2="355" y2="320" stroke="white" stroke-width="4" />
+    <line x1="380" y1="280" x2="380" y2="320" stroke="white" stroke-width="4" />
+
+    <!-- CIRCLE: flowers -->
+    <circle cx="110" cy="340" r="6" fill="red" />
+    <circle cx="125" cy="355" r="6" fill="pink" />
+    <circle cx="95"  cy="360" r="6" fill="purple" />
+
+    <!-- TEXT: label -->
+    <text x="312" y="245" font-size="18" font-family="Arial" fill="black">House</text>
+  </svg>
+
+  <h2>Step 2: SVG coordinate system</h2>
+  <!-- Replace with your annotated screenshot(s) -->
+  <img src="images/annotated-coordinates.png" alt="Annotated screenshot showing SVG coordinates">
+
+  <h2>Step 5: SVG and DOM in browser Developer Tools</h2>
+  <!-- Replace with your DevTools screenshot -->
+  <img src="images/dom-screenshot.png" alt="Screenshot of the SVG and the DOM in DevTools">
+
+  <h2>AI usage</h2>
+  <p>Describe here which GenAI tool you used, what you asked it, and what you changed yourself.</p>
+<h2>Exercise 4.3 - 4.6: Bar Chart</h2>
+<div class="bar-chart-container"></div>
+
+<h2>Exercise 5.1: Energy Consumption</h2>
+<p>
+    Average energy consumption of 55-inch TVs
+    by screen technology.
+</p>
+
+<div id="bar-chart" class="responsive-svg-container"></div>
+<!-- Exercise 5.2: Line Chart -->
+<h2>Exercise 5.2: Average Electricity Price</h2>
+
+<p>
+    Average Australian electricity spot price
+    from 1998 to 2024.
+</p>
+
+<div id="line-chart" class="responsive-svg-container"></div>
+
+<!-- Exercise 5.3: Donut Chart -->
+<h2>Exercise 5.3: TV Screen Size Distribution</h2>
+
+<p>
+    Proportion of small, medium and large TVs.
+</p>
+
+<div id="donut-chart" class="responsive-svg-container"></div>
+
+
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/barChart.js"></script>
+<script src="js/lineChart.js"></script>
+<script src="js/donut-chart.js"></script>
+</body>
+</html>
